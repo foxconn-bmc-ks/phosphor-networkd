@@ -555,7 +555,7 @@ void EthernetInterface::writeConfigurationFile()
 
     // write the network section
     stream << "[" << "Network" << "]\n";
-    stream << "LinkLocalAddressing=yes\n";
+    stream << "LinkLocalAddressing=no\n";
     stream << "IPv6AcceptRA=false\n";
 
     // Add the VLAN entry

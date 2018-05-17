@@ -157,6 +157,12 @@ void EthernetInterface::iP(IP::Protocol protType,
                                                 ipaddress,
                                                 prefixLength,
                                                 gateway);
+
+    /*delete all old ip address*/
+    if (this->addrs.size() > 0) {
+        this->addrs.clear();
+    }
+    /*add new ip address*/
     this->addrs.emplace(
                 std::move(ipaddress),
                 std::make_shared<phosphor::network::IPAddress>(
